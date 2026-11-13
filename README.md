@@ -13,6 +13,7 @@
 
 - 🎮 **LOL-RAG** — 用官方 Data Dragon 数据 + 手写 Function Calling 做的英雄联盟数据 Agent，
   Agent 必须查工具才能回答，前端把每次工具调用轨迹摊开给用户看。
+  M2 检索层 + M3 Agentic 路由已完成：手写 TF-IDF/余弦检索，436 篇语料（示例攻略 + 自动档案）。
   （173 英雄 / 254 件召唤师峡谷装备 / 数据版本 16.22.1）
 - 🧩 **Agent 工具调用** — 研究 function calling 协议、工具白名单、错误回传与多轮循环的边界。
 - 📚 **RAG** — 从向量检索的基本原理（embedding、余弦相似度）到可部署的检索服务。
@@ -29,7 +30,7 @@
 
 | 项目 | 说明 | 技术栈 | 链接 |
 | --- | --- | --- | --- |
-| 🆕 **LOL-RAG**<br/>英雄联盟数据 Agent | 官方 Data Dragon 数据入库，模型只能通过 3 个白名单工具回答英雄/装备问题；对话页展示可折叠的工具调用轨迹。 | React · FastAPI · DeepSeek Function Calling · SQLite · Render · Netlify | [repo](https://github.com/wml516518/lol-rag) · Demo: https://lol-rag.netlify.app |
+| 🆕 **LOL-RAG**<br/>英雄联盟数据 Agent | 官方 Data Dragon 数据 + 示例攻略语料；模型通过 4 个白名单工具回答，并在结构化查询与向量检索之间自主路由；对话页展示可折叠的工具调用轨迹。 | React · FastAPI · DeepSeek Function Calling · SQLite · TF-IDF 检索 · Render · Netlify | [repo](https://github.com/wml516518/lol-rag) · Demo: https://lol-rag.netlify.app |
 | **KnowledgeOps RAG** | 公开文档问答 Demo：上传解析 → 向量检索 → 基于资料回答，强调可部署的服务边界。 | React · FastAPI · Supabase pgvector · DashScope · Render · Netlify | [repo](https://github.com/wml516518/knowledgeops-rag) · [live](https://knowledgeops-rag-menglong.netlify.app) |
 | **Weekend Merge**<br/>周末共识局 | 双人周末决策 Agent：通过可观察的工具调用生成三套折中方案，一方否决后只重排受影响区段。 | React · TypeScript · Gemini Function Calling · Netlify Functions · Open-Meteo | [repo](https://github.com/wml516518/weekend-merge) · [live](https://weekend-merge-wml516518.netlify.app) |
 | **个人主页 + 构建日志** | 中英双语作品入口与公开项目记录，中文为唯一人工编辑源，英文由 CI 自动翻译生成。 | React 19 · Vite · TypeScript · Netlify | [repo](https://github.com/wml516518/menglong-build-log) · [live](https://menglong-build-log.netlify.app) |
